@@ -70,5 +70,16 @@ public class Apriori {
         ItemFreq prunedItemFreq = t.pruneItemFreq(support, dbItemFreq);
         return prunedItemFreq;
     }
+
+    // takes in an L2 and L3 and finds potential items for L2 transactions
+    public void getSuggestionsForL2(HashMap<ArrayList<String>, Integer> l2, HashMap<ArrayList<String>, Integer> l3){
+        for (ArrayList<String> a2 : l2.keySet()){
+            for(ArrayList<String> a3 : l3.keySet()){
+                if(a3.containsAll(a2)){
+                    System.out.println(a2 + " : " + l2.get(a2) + " -- " + a3 + " : " + l3.get(a3));
+                }
+            }
+        }
+    }
 }
 

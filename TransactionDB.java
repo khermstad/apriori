@@ -17,7 +17,7 @@ public class TransactionDB {
         }
         Random rd = new Random();
         for (int k = 0; k < amountOfTransactions; k++){
-            int sampleSetSize = avgSampleSetSize;
+            int sampleSetSize = avgSampleSetSize + rd.nextInt(3);
             Collections.shuffle(itemset);
             ArrayList<String> transaction = new ArrayList<>();
             for (int j = 0; j < sampleSetSize; j++){
