@@ -10,7 +10,6 @@ public class Apriori {
     }
 
     public HashMap<ArrayList<String>, Integer> getC2(int support, ArrayList<ArrayList<String>> tdb) {
-        HashMap<ArrayList<String>, Integer> C3 = new HashMap<>();
         // 1. Scan D for count of each candidate
         // C1
         ItemFreq dbItemFreq = t.getDatabaseItemFreq(tdb);
