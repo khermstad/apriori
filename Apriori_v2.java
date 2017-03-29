@@ -27,40 +27,33 @@ public class Apriori_v2 {
 //
         // generate randomizedDB - (avgSizeOfTransaction, AmountOfTransactions, AmtOfItems)
         int avgSizeOfTransaction = 3;
-        int amountOfTransactions = 1000000;
+        int amountOfTransactions = 1000;
         int amtOfItems = 15;
 
         TransactionDB randomizedDB = new TransactionDB(avgSizeOfTransaction, amountOfTransactions, amtOfItems);
 
-        int support = 500000;
+        int support = 20;
 
         // prints out all transactions
 //        for (ArrayList<String> als : randomizedDB.transactions){
 //            System.out.println(als);
 //        }
 
-        ItemFreq L1 = ap.getL1(support, randomizedDB.transactions);
-//
+        ItemFreq L1 = ap.getL1(280, randomizedDB.transactions);
+
 //        for (String s : L1.keySet()){
 //            System.out.println(s + " : " + L1.get(s));
 //        }
 
         // L2 of RandomizedDB
         HashMap<ArrayList<String>, Integer> L2 = ap.getC2(support, randomizedDB.transactions);
-
-        // L3 of RandomizedDB
-        HashMap<ArrayList<String>, Integer> L3 = ap.getC3(support, randomizedDB.transactions);
-
 //        // prints L2
 //        for (ArrayList<String> als : L2.keySet()){
 //            System.out.println(als + " : " + L2.get(als));
 //        }
 //
-
-
-
-
-
+        // L3 of RandomizedDB
+        HashMap<ArrayList<String>, Integer> L3 = ap.getC3(support, randomizedDB.transactions);
 //        // prints L3
 //        for (ArrayList<String> als : L3.keySet()){
 //            System.out.println(als + " : " + L3.get(als));
@@ -95,7 +88,7 @@ public class Apriori_v2 {
 //        }
 
         // get suggestions comparing L2 to L3
-//        ap.getSuggestionsForL2(friendsL2, friendsL3);
+        ap.getSuggestionsForL2(friendsL2, friendsL3);
 
 
     }
